@@ -27,13 +27,31 @@ let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 set encoding=utf8
 syntax enable
-set background=dark
+set t_Co=256
 colorscheme OceanicNext
+set background=dark
 let mapleader = ','
+
+let s:cterm00 = "00"
+let s:cterm05 = "152"
+
+"call <sid>hi("Normal", "", "", s:cterm05, s:cterm00, "")
+exec "hi Normal ctermfg=01 ctermbg=01"
+
+
+"set highlight Normal ctermfg=s:cterm05 termbg=s:cterm00
 
 set pastetoggle=<f6>
 set nopaste
+autocmd BufWritePre * %s/\s\+$//e
+set number
 
+" Copy to osx clipboard
+vnoremap <C-c> "*y<CR>
+" vnoremap y "*y<CR>
+" nnoremap Y "*Y<CR>
+vnoremap y myy`y
+vnoremap Y myY`y
 
 " NERDTree ------------------------------------------------------------------{{{
 

@@ -21,3 +21,5 @@ git submodule update
 ln -sfh $PWD/.config ~/.config
 ln -sfh $PWD/.spacemacs ~/.spacemacs
 ln -sfh $PWD/.zshrc ~/.zshrc
+ln -sfh $PWD/.config/tmux ~/.tmux
+ln -sfh $PWD/.tmux.conf ~/.tmux.conf
