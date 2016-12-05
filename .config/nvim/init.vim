@@ -40,7 +40,7 @@ exec "hi Normal ctermfg=01 ctermbg=01"
 
 
 "set highlight Normal ctermfg=s:cterm05 termbg=s:cterm00
-
+set clipboard+=unnamed
 set pastetoggle=<f6>
 set nopaste
 autocmd BufWritePre * %s/\s\+$//e
