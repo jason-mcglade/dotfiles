@@ -8,6 +8,7 @@ endif
 call plug#begin()
 
 Plug 'tpope/vim-sensible'
+Plug 'rking/ag.vim'
 
 " Styling
 Plug 'mhartington/oceanic-next'
