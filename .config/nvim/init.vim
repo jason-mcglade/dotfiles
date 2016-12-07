@@ -24,23 +24,17 @@ Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 set termguicolors
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 set encoding=utf8
 syntax enable
 set t_Co=256
-colorscheme OceanicNext
 set background=dark
+colorscheme OceanicNext
+let g:oceanic_next_terminal_italic = 1
+let g:oceanic_next_terminal_bold = 1
 let mapleader = ','
-
-let s:cterm00 = "00"
-let s:cterm05 = "152"
-
-"call <sid>hi("Normal", "", "", s:cterm05, s:cterm00, "")
-exec "hi Normal ctermfg=01 ctermbg=01"
-
-
-"set highlight Normal ctermfg=s:cterm05 termbg=s:cterm00
+highlight Normal guifg=none guibg=none
+"highlight LineNr guifg=none guibg=none
 set clipboard+=unnamed
 set pastetoggle=<f6>
 set nopaste
@@ -60,7 +54,7 @@ map <C-\> :NERDTreeToggle<CR>
 autocmd StdinReadPre * let s:std_in=1
 " autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 let NERDTreeShowHidden=1
-let g:NERDTreeWinSize=45
+let g:NERDTreeWinSize=35
 let g:NERDTreeAutoDeleteBuffer=1
 
 function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
