@@ -23,18 +23,14 @@ Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
 
-set termguicolors
-let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
-set encoding=utf8
+if (has("termguicolors"))
+ set termguicolors
+endif
 syntax enable
-set t_Co=256
-set background=dark
 colorscheme OceanicNext
-let g:oceanic_next_terminal_italic = 1
-let g:oceanic_next_terminal_bold = 1
+
 let mapleader = ','
-highlight Normal guibg=none
-"highlight LineNr guifg=none guibg=none
+
 set clipboard+=unnamed
 set pastetoggle=<f6>
 set nopaste
