@@ -33,7 +33,7 @@ colorscheme OceanicNext
 let g:oceanic_next_terminal_italic = 1
 let g:oceanic_next_terminal_bold = 1
 let mapleader = ','
-highlight Normal guifg=none guibg=none
+highlight Normal guibg=none
 "highlight LineNr guifg=none guibg=none
 set clipboard+=unnamed
 set pastetoggle=<f6>
@@ -108,7 +108,6 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline#extensions#tabline#show_tab_nr = 1
 let g:airline_powerline_fonts = 1
 let g:airline_theme='oceanicnext'
-" let g:airline_theme='base16_solarized'
 cnoreabbrev <expr> x getcmdtype() == ":" && getcmdline() == 'x' ? 'Sayonara' : 'x'
 nmap <leader>t :term<cr>
 nmap <leader>, :bnext<CR>
