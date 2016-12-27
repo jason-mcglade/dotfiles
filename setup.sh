@@ -1,7 +1,8 @@
 #!/bin/bash
 
 echo "**** Downloading Custom Fonts ****"
-curl -s -fLo ~/Library/Fonts/Sauce\ Code\ Pro\ Nerd\ Font\ Complete.ttf https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/SourceCodePro/Semibold/complete/Sauce%20Code%20Pro%20Semibold%20Nerd%20Font%20Complete.ttf?raw=true
+curl -s -fLo ~/Library/Fonts/Sauce\ Code\ Pro\ Nerd\ Font\ Complete.ttf https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/SourceCodePro/Regular/complete/Sauce%20Code%20Pro%20Nerd%20Font%20Complete.ttf
+curl -s -fLo ~/Library/Fonts/Sauce\ Code\ Pro\ Semibold\ Nerd\ Font\ Complete.ttf https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/SourceCodePro/Semibold/complete/Sauce%20Code%20Pro%20Semibold%20Nerd%20Font%20Complete.ttf
 
 echo "**** Installing oh-my-zsh ****"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
@@ -25,5 +26,4 @@ ln -sfh $PWD/.config/tmux ~/.tmux
 ln -sfh $PWD/.tmux.conf ~/.tmux.conf
 
 echo "**** Installing neovim python support ****"
-
-#pip3 install neovim
+pip3 install neovim
