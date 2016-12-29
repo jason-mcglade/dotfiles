@@ -30,7 +30,7 @@ Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'christoomey/vim-tmux-navigator'
 
 " Code
-Plug 'scrooloose/syntastic'
+Plug 'neomake/neomake'
 Plug 'tpope/vim-surround'
 Plug 'kien/ctrlp.vim'
 Plug 'tpope/vim-commentary'
@@ -39,6 +39,9 @@ Plug 'thoughtbot/vim-rspec'
 Plug 'jgdavey/tslime.vim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'fishbullet/deoplete-ruby'
+
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 
 " Windows
 Plug 'jimsei/winresizer'
@@ -75,6 +78,9 @@ map <Leader>f :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
+
+" neomake
+autocmd! BufWritePost * Neomake
 
 " Navigation ----------------------------------------------------------------
 " Fix for vim-tmux-navigator in neovim

@@ -90,3 +90,5 @@ autoload -Uz compinit && compinit -i
 
 DEFAULT_USER=$USER
 
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
