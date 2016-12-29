@@ -40,6 +40,9 @@ Plug 'jgdavey/tslime.vim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'fishbullet/deoplete-ruby'
 
+" Windows
+Plug 'jimsei/winresizer'
+
 call plug#end()
 
 if (has("termguicolors"))
