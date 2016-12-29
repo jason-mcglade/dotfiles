@@ -107,6 +107,15 @@ noremap L g_
 noremap J 5j
 noremap K 5k<Paste>
 
+" Buffers
+set splitbelow
+set splitright
+cnoreabbrev <expr> x getcmdtype() == ":" && getcmdline() == 'x' ? 'Sayonara' : 'x'
+nmap <leader>t :vs<cr> :term<cr>
+nmap <leader>ts :sp<cr> :term<cr>
+nmap <leader>, :bnext<CR>
+nmap <leader>. :bprevious<CR>
+
 " NERDTree ------------------------------------------------------------------{{{
 
 autocmd StdinReadPre * let s:std_in=1
@@ -169,10 +178,6 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline#extensions#tabline#show_tab_nr = 1
 let g:airline_powerline_fonts = 1
 let g:airline_theme='oceanicnext'
-cnoreabbrev <expr> x getcmdtype() == ":" && getcmdline() == 'x' ? 'Sayonara' : 'x'
-nmap <leader>t :term<cr>
-nmap <leader>, :bnext<CR>
-nmap <leader>. :bprevious<CR>
 let g:airline#extensions#tabline#buffer_idx_mode = 1
 nmap <leader>1 <Plug>AirlineSelectTab1
 nmap <leader>2 <Plug>AirlineSelectTab2
