@@ -66,7 +66,7 @@ vnoremap Y myY`y
 
 map <esc> :noh<cr>
 
-" Code
+" Code ---------------------------------------------------------------------
 let g:deoplete#enable_at_startup = 1
 
 " vim-rspec
@@ -76,6 +76,9 @@ map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
 
+" Navigation ----------------------------------------------------------------
+" Fix for vim-tmux-navigator in neovim
+nnoremap <silent> <BS> :TmuxNavigateLeft<cr>
 
 " NERDTree ------------------------------------------------------------------{{{
 
