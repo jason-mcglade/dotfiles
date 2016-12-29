@@ -61,10 +61,10 @@ set number
 
 " Copy to osx clipboard
 vnoremap <C-c> "*y<CR>
-" vnoremap y "*y<CR>
-" nnoremap Y "*Y<CR>
 vnoremap y myy`y
 vnoremap Y myY`y
+
+map <esc> :noh<cr>
 
 " Code
 let g:deoplete#enable_at_startup = 1
