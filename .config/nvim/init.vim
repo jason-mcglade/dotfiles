@@ -39,6 +39,7 @@ Plug 'thoughtbot/vim-rspec'
 Plug 'jgdavey/tslime.vim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'fishbullet/deoplete-ruby'
+Plug 'tomtom/tcomment_vim'
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -82,9 +83,28 @@ map <Leader>a :call RunAllSpecs()<CR>
 " neomake
 autocmd! BufWritePost * Neomake
 
+" Align blocks of text and keep them selected
+vmap < <gv
+vmap > >gv
+
+" Spaces
+set tabstop=2 shiftwidth=2 expandtab
+
+" Comment
+vnoremap <c-/> :TComment<CR>
+
 " Navigation ----------------------------------------------------------------
 " Fix for vim-tmux-navigator in neovim
 nnoremap <silent> <BS> :TmuxNavigateLeft<cr>
+
+" Neovim terminal mapping
+tmap <esc> <c-\><c-n><esc><cr>
+
+" Navigation assistance
+noremap H ^
+noremap L g_
+noremap J 5j
+noremap K 5k<Paste>
 
 " NERDTree ------------------------------------------------------------------{{{
 
