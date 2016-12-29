@@ -46,6 +46,7 @@ Plug 'junegunn/fzf.vim'
 
 " Windows
 Plug 'jimsei/winresizer'
+Plug 'mhinz/vim-sayonara'
 
 call plug#end()
 
