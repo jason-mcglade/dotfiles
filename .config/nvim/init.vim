@@ -13,7 +13,6 @@ Plug 'rking/ag.vim'
 " Styling
 Plug 'mhartington/oceanic-next'
 Plug 'reedes/vim-colors-pencil'
-Plug 'frankier/neovim-colors-solarized-truecolor-only'
 
 " UI
 Plug 'scrooloose/nerdtree'
@@ -40,6 +39,7 @@ Plug 'jgdavey/tslime.vim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'fishbullet/deoplete-ruby'
 Plug 'tomtom/tcomment_vim'
+Plug 'Yggdroot/indentLine'
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -94,6 +94,12 @@ set tabstop=2 shiftwidth=2 expandtab
 " Comment
 vnoremap <c-/> :TComment<CR>
 
+" Indent
+let g:indentLine_char = '│'
+
+" Line wrap
+:set nowrap
+
 " Navigation ----------------------------------------------------------------
 " Fix for vim-tmux-navigator in neovim
 nnoremap <silent> <BS> :TmuxNavigateLeft<cr>
@@ -141,7 +147,7 @@ call NERDTreeHighlightFile('json', 'green', 'none', '#d8a235', 'none')
 call NERDTreeHighlightFile('html', 'yellow', 'none', '#d8a235', 'none')
 call NERDTreeHighlightFile('css', 'cyan', 'none', '#5486C0', 'none')
 call NERDTreeHighlightFile('scss', 'cyan', 'none', '#5486C0', 'none')
-call NERDTreeHighlightFile('coffee', 'Red', 'none', 'red', 'none')
+call NERDTreeHighlightFile('coffee', 'Red', 'none', '#ec5f67', 'none')
 call NERDTreeHighlightFile('js', 'Red', 'none', '#ffa500', 'none')
 call NERDTreeHighlightFile('ts', 'Blue', 'none', '#6699cc', 'none')
 call NERDTreeHighlightFile('ds_store', 'Gray', 'none', '#686868', 'none')
