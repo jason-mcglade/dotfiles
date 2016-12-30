@@ -1,7 +1,7 @@
 
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
   silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall | source $MYVIMRC
 endif
 
@@ -28,18 +28,20 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'christoomey/vim-tmux-navigator'
 
+" terminal
+Plug 'kassio/neoterm'
+Plug 'tpope/vim-dispatch'
+Plug 'radenling/vim-dispatch-neovim'
+
 " Code
 Plug 'neomake/neomake'
 Plug 'tpope/vim-surround'
 Plug 'kien/ctrlp.vim'
 Plug 'tpope/vim-rails'
-Plug 'thoughtbot/vim-rspec'
-Plug 'jgdavey/tslime.vim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'fishbullet/deoplete-ruby'
 Plug 'tomtom/tcomment_vim'
 Plug 'Yggdroot/indentLine'
-
 Plug 'ecomba/vim-ruby-refactoring'
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -52,7 +54,7 @@ Plug 'mhinz/vim-sayonara'
 call plug#end()
 
 if (has("termguicolors"))
- set termguicolors
+  set termguicolors
 endif
 syntax enable
 colorscheme OceanicNext
@@ -70,17 +72,13 @@ vnoremap <C-c> "*y<CR>
 vnoremap y myy`y
 vnoremap Y myY`y
 
-map <esc> :noh<cr>
+" Clear find highlight
+map <esc> :noh \| TTestClearStatus<cr>
+
+filetype plugin on
 
 " Code ---------------------------------------------------------------------
 let g:deoplete#enable_at_startup = 1
-
-" vim-rspec
-let g:rspec_command = 'call Send_to_Tmux("bundle exec rspec {spec}\n")'
-map <Leader>f :call RunCurrentSpecFile()<CR>
-map <Leader>s :call RunNearestSpec()<CR>
-map <Leader>l :call RunLastSpec()<CR>
-map <Leader>a :call RunAllSpecs()<CR>
 
 " neomake
 autocmd! BufWritePost * Neomake
@@ -100,6 +98,16 @@ let g:indentLine_char = '│'
 
 " Line wrap
 :set nowrap
+
+" Testing
+let g:neoterm_run_tests_bg = 1
+let g:neoterm_size = 10
+let g:neoterm_raise_when_tests_fail = 1
+let g:neoterm_close_when_tests_succeed = 1
+nmap <silent> <leader>s :call neoterm#test#run('current')<CR>
+nmap <silent> <leader>f :call neoterm#test#run('file')<CR>
+nmap <silent> <leader>a :call neoterm#test#run('all')<CR>
+nmap <silent> <leader>l :call neoterm#test#rerun<CR>
 
 " Navigation ----------------------------------------------------------------
 " Fix for vim-tmux-navigator in neovim
@@ -135,8 +143,8 @@ autocmd VimEnter * NERDTree
 autocmd VimEnter * wincmd p
 
 function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
-exec 'autocmd FileType nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
-exec 'autocmd FileType nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
+  exec 'autocmd FileType nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
+  exec 'autocmd FileType nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
 endfunction
 
 
@@ -196,6 +204,14 @@ nmap <leader>7 <Plug>AirlineSelectTab7
 nmap <leader>8 <Plug>AirlineSelectTab8
 nmap <leader>9 <Plug>AirlineSelectTab9
 set guifont=SauceCodePro\ Nerd\ Font\ Regular:h13
-"}}}
 
+let g:airline_section_x = airline#section#create_right(['%{neoterm#test#status("running")}%{neoterm#test#status("success")}%{neoterm#test#status("failed")}', 'tagbar', 'filetype'])
+let g:neoterm_test_status_format = "%s"
+let g:neoterm_test_status = {
+      \ "running": "\uf056 Tests Running",
+      \ "success": "\uf058 Tests Succeeded",
+      \ "failed": "\uf057 Test Failed"
+      \ }
+
+"}}}
 
