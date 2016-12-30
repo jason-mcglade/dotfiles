@@ -41,6 +41,8 @@ Plug 'fishbullet/deoplete-ruby'
 Plug 'tomtom/tcomment_vim'
 Plug 'Yggdroot/indentLine'
 
+Plug 'ecomba/vim-ruby-refactoring'
+
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
