@@ -51,6 +51,9 @@ Plug 'junegunn/fzf.vim'
 Plug 'jimsei/winresizer'
 Plug 'mhinz/vim-sayonara'
 
+" Config
+Plug 'embear/vim-localvimrc'
+
 call plug#end()
 
 if (has("termguicolors"))
