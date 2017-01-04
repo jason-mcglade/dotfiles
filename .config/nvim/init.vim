@@ -19,6 +19,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'vim-airline/vim-airline'
 Plug 'ryanoasis/vim-devicons'
+Plug 'jszakmeister/vim-togglecursor'
 
 " Soure Control
 Plug 'tpope/vim-fugitive'
@@ -79,6 +80,9 @@ vnoremap Y myY`y
 map <esc> :noh \| TTestClearStatus<cr>
 
 filetype plugin on
+
+set ignorecase
+set smartcase
 
 " Code ---------------------------------------------------------------------
 let g:deoplete#enable_at_startup = 1
