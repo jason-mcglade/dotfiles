@@ -13,6 +13,7 @@ Plug 'rking/ag.vim'
 " Styling
 Plug 'mhartington/oceanic-next'
 Plug 'reedes/vim-colors-pencil'
+Plug 'slim-template/vim-slim'
 
 " UI
 Plug 'scrooloose/nerdtree'
@@ -110,7 +111,6 @@ let g:indentLine_char = '│'
 let g:neoterm_run_tests_bg = 1
 let g:neoterm_size = 10
 let g:neoterm_raise_when_tests_fail = 1
-let g:neoterm_close_when_tests_succeed = 1
 nmap <silent> <leader>s :call neoterm#test#run('current')<CR>
 nmap <silent> <leader>f :call neoterm#test#run('file')<CR>
 nmap <silent> <leader>a :call neoterm#test#run('all')<CR>
