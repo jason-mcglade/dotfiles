@@ -45,6 +45,7 @@ Plug 'fishbullet/deoplete-ruby'
 Plug 'tomtom/tcomment_vim'
 Plug 'Yggdroot/indentLine'
 Plug 'ecomba/vim-ruby-refactoring'
+Plug 'tpope/vim-endwise'
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -96,7 +97,7 @@ vmap < <gv
 vmap > >gv
 
 " Spaces
-set tabstop=2 shiftwidth=2 expandtab
+set tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 
 " Comment
 vnoremap <c-/> :TComment<CR>
@@ -114,7 +115,7 @@ let g:neoterm_raise_when_tests_fail = 1
 nmap <silent> <leader>s :call neoterm#test#run('current')<CR>
 nmap <silent> <leader>f :call neoterm#test#run('file')<CR>
 nmap <silent> <leader>a :call neoterm#test#run('all')<CR>
-nmap <silent> <leader>l :call neoterm#test#rerun<CR>
+nmap <silent> <leader>l :call neoterm#test#rerun()<CR>
 
 " Navigation ----------------------------------------------------------------
 " Fix for vim-tmux-navigator in neovim
