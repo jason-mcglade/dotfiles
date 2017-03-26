@@ -134,6 +134,8 @@ noremap K 5k<Paste>
 set splitbelow
 set splitright
 cnoreabbrev <expr> x getcmdtype() == ":" && getcmdline() == 'x' ? 'Sayonara' : 'x'
+nmap <c-d> :Sayonara!<cr>
+nmap <c-b> :Buffers<cr>
 nmap <leader>t :vs<cr> :term<cr>
 nmap <leader>ts :sp<cr> :term<cr>
 nmap <leader>, :bnext<CR>
