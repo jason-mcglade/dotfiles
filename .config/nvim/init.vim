@@ -109,7 +109,7 @@ let g:indentLine_char = '│'
 :set nowrap
 
 " Testing
-let g:neoterm_run_tests_bg = 1
+let g:neoterm_run_tests_bg = 0
 let g:neoterm_size = 10
 let g:neoterm_raise_when_tests_fail = 1
 nmap <silent> <leader>s :call neoterm#test#run('current')<CR>
