@@ -72,6 +72,7 @@ set pastetoggle=<f6>
 set nopaste
 autocmd BufWritePre * %s/\s\+$//e
 set number
+set selection=exclusive
 
 " Copy to osx clipboard
 vnoremap <C-c> "*y<CR>
