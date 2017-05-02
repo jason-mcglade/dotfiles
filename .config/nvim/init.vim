@@ -87,6 +87,11 @@ filetype plugin on
 set ignorecase
 set smartcase
 
+" Neovim custom ------------------------------------------------------------
+if exists('&inccommand')
+  set inccommand=split
+endif
+
 " Code ---------------------------------------------------------------------
 let g:deoplete#enable_at_startup = 1
 
