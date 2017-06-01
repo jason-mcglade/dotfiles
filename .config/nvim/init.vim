@@ -8,7 +8,7 @@ endif
 call plug#begin()
 
 Plug 'tpope/vim-sensible'
-Plug 'rking/ag.vim'
+" Plug 'rking/ag.vim'
 
 " Styling
 Plug 'mhartington/oceanic-next'
@@ -31,14 +31,22 @@ Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'christoomey/vim-tmux-navigator'
 
 " terminal
-Plug 'kassio/neoterm'
+Plug 'kassio/neoterm', { 'commit': '2a9420858ae819f64eabc7996f580259081a1b4c' }
 Plug 'tpope/vim-dispatch'
 Plug 'radenling/vim-dispatch-neovim'
 
 " Code
+Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+let g:fzf_action = {
+      \ 'ctrl-s': 'split',
+      \ 'ctrl-v': 'vsplit'
+      \ }
+nnoremap <c-p> :FZF<cr>
+
 Plug 'neomake/neomake'
 Plug 'tpope/vim-surround'
-Plug 'kien/ctrlp.vim'
+" Plug 'kien/ctrlp.vim'
 Plug 'tpope/vim-rails'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'fishbullet/deoplete-ruby'
@@ -46,9 +54,6 @@ Plug 'tomtom/tcomment_vim'
 Plug 'Yggdroot/indentLine'
 Plug 'ecomba/vim-ruby-refactoring'
 Plug 'tpope/vim-endwise'
-
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
 
 " Windows
 Plug 'jimsei/winresizer'
