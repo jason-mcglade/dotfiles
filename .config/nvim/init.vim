@@ -97,6 +97,11 @@ if exists('&inccommand')
   set inccommand=split
 endif
 
+
+" Redefine :Ag command -----------------------------------------------------
+autocmd VimEnter * command! -nargs=* Ag
+      \ call fzf#vim#ag(<q-args>, '--color-path "33;1"', fzf#vim#default_layout)
+
 " Code ---------------------------------------------------------------------
 let g:deoplete#enable_at_startup = 1
 
