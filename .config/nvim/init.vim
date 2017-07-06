@@ -64,9 +64,6 @@ Plug 'embear/vim-localvimrc'
 
 call plug#end()
 
-" Clear backgroud to speed up tmux performance
-hi Normal ctermbg=NONE guibg=NONE
-
 if (has("termguicolors"))
   set termguicolors
 endif
@@ -243,3 +240,5 @@ let g:neoterm_test_status = {
 
 "}}}
 
+" Clear backgroud to speed up tmux performance
+hi Normal ctermbg=NONE guibg=NONE
