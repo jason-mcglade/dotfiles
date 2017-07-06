@@ -64,6 +64,9 @@ Plug 'embear/vim-localvimrc'
 
 call plug#end()
 
+" Clear backgroud to speed up tmux performance
+hi Normal ctermbg=NONE guibg=NONE
+
 if (has("termguicolors"))
   set termguicolors
 endif
@@ -172,7 +175,6 @@ function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
   exec 'autocmd FileType nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
   exec 'autocmd FileType nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
 endfunction
-
 
 call NERDTreeHighlightFile('jade', 'green', 'none', 'green', 'none')
 call NERDTreeHighlightFile('md', 'blue', 'none', '#6699CC', 'none')
