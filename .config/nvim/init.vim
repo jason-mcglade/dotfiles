@@ -64,6 +64,9 @@ Plug 'embear/vim-localvimrc'
 
 call plug#end()
 
+set ttyfast
+set lazyredraw
+
 if (has("termguicolors"))
   set termguicolors
 endif
